@@ -1,0 +1,31 @@
+GET 
+url/users/      <---- Returns all users
+url/users/FindUserJohnDoe@gmail.com     <----- Returns user with email of JohnDoe@gmail.com
+
+
+DELETE
+url/users/FindUserJohnDoe@gmail.com     <----- Deletes the user with email of JohnDoe@gmail.com
+url/users/fileJohnDoe@gmail.com     <----- Deletes file with filename 'test' from user with email of JohnDoe@gmail.com
+    req.body = 
+        {
+        "filename": "test"
+        }
+
+
+POST
+url/users/fileJohnDoe@gmail.com   <---- Add the file to database under account JohnDoe@gmail.com
+{
+	"file":{
+	"fileInfo": {
+          "source": "test",
+          "filename": "test",
+          "mimetype": "text/csv"
+  },
+  "parsedData": {}
+}
+}
+
+url/users/User   <---- Add user with the email JohnDoe@gmail.com
+{
+	"email":"JohnDoe@gmail.com"
+}
