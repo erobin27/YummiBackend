@@ -24,15 +24,9 @@ const userSchema = new Schema(
       minlength: 3,
     },
     files: [
-      {
-        fileInfo: {
-          source: { type: Buffer, required: true }, //file
-          filename: { type: String, required: true }, //generatedData.csv
-          mimetype: { type: String, required: true }, //text/csv
-        },
-        parsedData: { type: Object, required: true },
-      },
+      {type: Object, required: true },
     ],
+    activeFile: {type: String}
   },
   {
     timestamps: true,
