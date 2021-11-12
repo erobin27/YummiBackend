@@ -109,6 +109,7 @@ router.route("/ActiveFile").post((req, res) => {
   if (req.headers.secret != process.env.SECRET) {
     return res.status(401).json("You shall not pass... without password");
   }
+  let fileIndex = -1
   const email = req.headers.email;
   const filename = req.body.filename;
   const selectedUser = User.findOne({ email: email }); //get user by email
